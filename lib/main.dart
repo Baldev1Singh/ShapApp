@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProxyProvider<Auth, Products>(
           update: (ctx, auth, previousProducts) => Products(
-                auth.token!,
+                auth.token,
                 previousProducts == null ? [] : previousProducts.items,
               ),
           create: (context) => Products('', []),
@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primarySwatch: Colors.purple,
                 accentColor: Colors.deepOrange,
-                fontFamily: 'Lato',
               ),
               home: auth.isAuth ? ProductsOverviewScreen() : AuthScreen(),
               routes: {

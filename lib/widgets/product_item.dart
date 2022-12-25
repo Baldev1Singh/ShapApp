@@ -33,6 +33,18 @@ class ProductItem extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        header:Padding(
+          padding: const EdgeInsets.only(left:3.5),
+          child: Text(
+            product.title!,
+            textAlign: TextAlign.left,
+            style:TextStyle(
+              fontSize: 15,
+              backgroundColor: Colors.black87,
+              color:Colors.white,
+            ),
+          ),
+        ),
         footer: GridTileBar(
           backgroundColor: Colors.black87,
           leading: Consumer<Product>(
@@ -42,14 +54,15 @@ class ProductItem extends StatelessWidget {
                   ),
                   color: Theme.of(context).accentColor,
                   onPressed: () {
-                    product.toggleFavoriteStatus(authData.token!);
+                    product.toggleFavoriteStatus(authData.token!,authData.userId);
                   },
                 ),
           ),
           title: Text(
-            product.title!,
+           '\$${product.price!}',
             textAlign: TextAlign.center,
           ),
+
           trailing: IconButton(
             icon: Icon(
               Icons.shopping_cart,

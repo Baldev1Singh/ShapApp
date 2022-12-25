@@ -60,12 +60,24 @@ class AuthScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      child: Text(
-                        'MyShop',
-                        style: TextStyle(
-                          fontSize: 50,
-                          fontFamily: 'Anton',
-                          fontWeight: FontWeight.normal,
+                      child: FittedBox(
+                        child: Row(
+                          children: [
+                            Icon(Icons.shop,
+                            color: Colors.white,
+                            size: 50,
+                            ),
+                            SizedBox(),
+                            Text(
+                              'MyShop',
+                              softWrap: true,
+                              style: TextStyle(
+                                fontSize: 50,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
